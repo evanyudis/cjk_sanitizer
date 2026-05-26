@@ -1,5 +1,9 @@
 # CJK Sanitizer — Hermes Agent Plugin
 
+<p align="center">
+  <img src="assets/hero.jpg" alt="CJK Sanitizer" width="800">
+</p>
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Hermes Agent](https://img.shields.io/badge/Hermes%20Agent-plugin-blue)](https://hermes-agent.nousresearch.com)
 
