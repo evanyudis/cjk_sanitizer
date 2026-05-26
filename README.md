@@ -46,38 +46,21 @@ The plugin is **context-aware**: if your conversation is in a language that genu
 
 - [Hermes Agent](https://hermes-agent.nousresearch.com/docs/getting-started/installation) installed and running
 
-### 1. Clone the plugin into your Hermes plugins directory
+### 1. Install with one command
 
 ```bash
-git clone https://github.com/evanyudis/cjk_sanitizer.git ~/.hermes/plugins/cjk_sanitizer
+hermes plugins install evanyudis/cjk_sanitizer --enable
 ```
 
-### 2. Enable it in your Hermes config
+This clones the repo into `~/.hermes/plugins/cjk_sanitizer/` and adds it to your `plugins.enabled` config automatically.
 
-Edit `~/.hermes/config.yaml` and add `cjk_sanitizer` to `plugins.enabled`:
-
-```yaml
-plugins:
-  enabled:
-    - cjk_sanitizer
-```
-
-If you already have other plugins enabled, just add it to the list:
-
-```yaml
-plugins:
-  enabled:
-    - cjk_sanitizer
-    - your_other_plugin
-```
-
-### 3. Restart Hermes Agent
+### 2. Restart Hermes Agent
 
 ```bash
 hermes gateway restart
 ```
 
-Or if you're running in CLI mode, just start a new session — plugins auto-discover on startup.
+Or start a new CLI session — plugins auto-discover on startup.
 
 ### Verify it's loaded
 
@@ -85,7 +68,31 @@ Or if you're running in CLI mode, just start a new session — plugins auto-disc
 hermes plugins list
 ```
 
-You should see `cjk_sanitizer` in the output with status "loaded".
+You should see `cjk_sanitizer` with a checkmark or "loaded" status.
+
+### Alternative: Manual install
+
+If `hermes plugins install` isn't available (older version), you can do it manually:
+
+```bash
+git clone https://github.com/evanyudis/cjk_sanitizer.git ~/.hermes/plugins/cjk_sanitizer
+```
+
+Then edit `~/.hermes/config.yaml`:
+
+```yaml
+plugins:
+  enabled:
+    - cjk_sanitizer
+```
+
+Then restart.
+
+### Updating
+
+```bash
+hermes plugins update cjk_sanitizer
+```
 
 ## Usage
 
