@@ -94,6 +94,44 @@ Then restart.
 hermes plugins update cjk_sanitizer
 ```
 
+---
+
+### In-Chat Plugin Management (/pm)
+
+Want to install plugins directly from Discord/Telegram without touching the terminal?  
+The `pm` (plugin manager) companion plugin adds a `/pm` slash command to your Hermes gateway.
+
+**Install the companion:**
+
+```bash
+git clone https://github.com/evanyudis/cjk_sanitizer.git /tmp/cjk_sanitizer
+cp -r /tmp/cjk_sanitizer/pm-companion ~/.hermes/plugins/pm
+rm -rf /tmp/cjk_sanitizer
+hermes gateway restart
+```
+
+Then add a quick command alias so `/plugins` also works:
+
+```yaml
+quick_commands:
+  plugins:
+    target: /pm
+    type: alias
+```
+
+Now in any chat:
+
+| Command | What it does |
+|---------|-------------|
+| `/pm list` | List all installed plugins |
+| `/pm install evanyudis/cjk_sanitizer` | Install & enable |
+| `/pm remove <name>` | Uninstall |
+| `/pm update <name>` | Update to latest |
+| `/pm enable <name>` | Enable |
+| `/pm disable <name>` | Disable without removing |
+
+This works on Discord, Telegram, and all other gateway platforms — no terminal required.
+
 ## Usage
 
 **There's nothing to configure.** Once the plugin is enabled, it works automatically on every LLM response. Chinese characters and Cyrillic text in model output will be stripped before you see them.

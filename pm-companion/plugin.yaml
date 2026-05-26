@@ -1,0 +1,4 @@
+name: pm
+version: "1.0.0"
+description: Plugin manager slash command — install, list, remove, update, enable, disable Hermes plugins from chat.
+provides_hooks: []
